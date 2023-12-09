@@ -1,3 +1,3 @@
 <template>
-  HOME VIEW
+    credit goes here
 </template>

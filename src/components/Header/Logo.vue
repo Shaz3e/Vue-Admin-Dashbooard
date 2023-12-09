@@ -1,3 +1,3 @@
 <template>
-  HOME VIEW
+  LOGO
 </template>
