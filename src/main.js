@@ -6,7 +6,7 @@ import './assets/plugins/fontawesome-free/css/all.min.css'
 import './assets/dist/css/adminlte.min.css'
 import './assets/dist/js/adminlte.min.js'
 // JS
-import './assets/plugins/jquery/jquery.min.js'
+import 'jquery';
 import './assets/plugins/bootstrap/js/bootstrap.bundle.min.js'
 import './assets/dist/js/adminlte.min.js'
 
