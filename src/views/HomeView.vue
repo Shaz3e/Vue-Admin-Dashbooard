@@ -2,7 +2,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        <DashboardHeader :pageTitle="pageTitle" />
+        <PageHeader :pageTitle="pageTitle" />
 
         <!-- Main content -->
         <section class="content">
@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import DashboardHeader from '../components/DashboardHeader.vue'
+import PageHeader from '../components/PageHeader.vue'
 
 export default {
     components: {
-        DashboardHeader
+        PageHeader
     },
     data(){
         return{
