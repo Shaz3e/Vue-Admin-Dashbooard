@@ -1,18 +1,18 @@
 <template>
     <footer>
-        <CopyRight />
+        <Copyright />
         <Credit />
     </footer>
 </template>
 
 <script>
-import CopyRight from './CopyRight.vue'
+import Copyright from './Copyright.vue'
 import Credit from './Credit.vue'
 
 export default {
     name: "Footer",
     components: {
-        CopyRight,
+        Copyright,
         Credit
     }
 }
