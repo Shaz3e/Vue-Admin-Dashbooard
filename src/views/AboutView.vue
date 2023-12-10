@@ -1,3 +1,3 @@
 <template>
-  ABOUT VIEW
+    ABOUT
 </template>

@@ -1,18 +1,25 @@
 <template>
-  <Header />
-  <router-view />
-  <Footer />
+  <div id="app">
+    <Header />
+    <main>
+      <Sidebar />
+      <router-view></router-view>
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Header from "./components/Header/Header.vue";
-import Footer from "./components/Footer/Footer.vue"
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Sidebar from './components/Sidebar.vue';
 
 export default {
-  // name: 'App',
+  name: 'App',
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+    Sidebar,
+  },
+};
 </script>

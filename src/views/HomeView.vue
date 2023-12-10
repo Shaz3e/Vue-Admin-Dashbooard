@@ -1,3 +1,3 @@
 <template>
-  HOME VIEW
+    HOME
 </template>
