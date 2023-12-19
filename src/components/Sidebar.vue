@@ -38,11 +38,11 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <router-link :to="{ name: 'home' }" class="nav-link">
+            <router-link :to="{ name: 'home' }" class="nav-link" exact exact-active-class="active">
               <i class="nav-icon fas fa-th"></i>
               <p>Home</p>
             </router-link>
-            <router-link :to="{ name: 'about' }" class="nav-link">
+            <router-link :to="{ name: 'about' }" class="nav-link" exact exact-active-class="active">
               <i class="nav-icon fas fa-th"></i>
               <p>About</p>
             </router-link>
