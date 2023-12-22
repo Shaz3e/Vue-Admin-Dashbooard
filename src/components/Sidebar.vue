@@ -42,9 +42,23 @@
               <i class="nav-icon fas fa-th"></i>
               <p>Home</p>
             </router-link>
+          </li>
+          <li class="nav-item">
             <router-link :to="{ name: 'about' }" class="nav-link" exact exact-active-class="active">
               <i class="nav-icon fas fa-th"></i>
               <p>About</p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'contact' }" class="nav-link" exact exact-active-class="active">
+              <i class="nav-icon fas fa-th"></i>
+              <p>contact</p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'SkillIndex' }" class="nav-link" exact exact-active-class="active">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Skills</p>
             </router-link>
           </li>
         </ul>
