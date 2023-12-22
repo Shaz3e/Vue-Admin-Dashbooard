@@ -1,6 +1,5 @@
 import { ref } from "vue";
 import axios from "axios";
-
 import { useRouter, userRouter } from 'vue-router'
 
 axios.defaults.baseURL = "http://rest-api.localhost/api/v1/"
@@ -9,11 +8,20 @@ export default function useSkills(){
     const skills = ref([])
     const skill = ref([])
     const errors = ref({})
-    const router = useRouter()
+    const router = useRouter()    
+    const pagination = ref()
 
-    const getSkills = async () => {
-        const response = await axios.get("skills")
-        skills.value = response.data.data
+    const getSkills = async (page = 1) => {
+        try{
+            const response = await axios.get("skills", {
+                params: { page }
+            })
+            skills.value = response.data.data
+            pagination.value = response.data.links
+        }catch(error){
+            console.log('Error fetching records: ', error)
+            router.push({name: "SkillIndex"})
+        }
     }
 
     const getSkill = async (id) => {
@@ -61,6 +69,7 @@ export default function useSkills(){
         skills,
         skill,
         errors,
+        pagination,
         getSkills,
         getSkill,
         storeSkill,

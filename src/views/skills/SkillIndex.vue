@@ -5,7 +5,7 @@ import { onMounted } from 'vue';
 
 const pageTitle = 'Skills'
 
-const { skills, getSkills, destroySkill } = useSkills()
+const { skills, getSkills, destroySkill, pagination } = useSkills()
 onMounted(() => getSkills())
 
 </script>
@@ -25,7 +25,8 @@ onMounted(() => getSkills())
                     <h3 class="card-title">Title</h3>
 
                     <div class="card-tools">
-                        <router-link :to="{name: 'SkillCreate'}" class="btn btn-sm btn-flat btn-success">Create New</router-link>
+                        <router-link :to="{ name: 'SkillCreate' }" class="btn btn-sm btn-flat btn-success">Create
+                            New</router-link>
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
                         </button>
@@ -50,8 +51,8 @@ onMounted(() => getSkills())
                                 <td>{{ skill.name }}</td>
                                 <td>{{ skill.slug }}</td>
                                 <td>
-                                    <router-link :to="{name: 'SkillEdit', params: {id: skill.id}}"
-                                    class="btn btn-sm btn-success">
+                                    <router-link :to="{ name: 'SkillEdit', params: { id: skill.id } }"
+                                        class="btn btn-sm btn-success">
                                         Edit
                                     </router-link>
                                     <button @click="destroySkill(skill.id)" class="btn btn-sm btn-danger">
@@ -64,7 +65,13 @@ onMounted(() => getSkills())
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    Footer
+                    <div v-if="pagination">
+                        <ul class="pagination pagination-month justify-content-center">
+                            <li v-for="link in pagination.links" :key="link.label" :class="{ active: link.active }">
+                                <router-link :to="{ path: link.url }">{{ link.label }}</router-link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- /.card-footer-->
             </div>
